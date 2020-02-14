@@ -1,0 +1,40 @@
+To-Do List
+
+
+-- Homepage (index page) for webapp/site
+    -- navbar with tabs/links 
+    -- User friendly UI and Landing page
+    -- display Relevant CSU data
+    
+    
+-- Task List 
+    -- User can add tasks and check them off
+    -- Javascript backend write to server side file
+    
+    
+-- Contacts List
+    -- User can add contacts and will be displayed on page
+    -- Javascript backend write to server side file
+    
+    
+-- Schedule
+    -- User can add classes and view schedule
+    -- Javascript backend write to server side file
+    
+    
+-- Resource Links
+    -- Tab to have links to CSU resources
+        -- Blackboard
+        -- Campus Net
+        -- Library
+        -- etc.
+   
+   
+-- Personal Calendar
+    -- User Calendar with just holidays and user events displayed on calendar view
+    
+    
+-- CSU Calendar
+    -- Calendar using google calendar api key and csu google calendar id to load csu events
+       and display them appropriately. Use List view due to high volume of events.
+
