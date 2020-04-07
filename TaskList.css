@@ -1,0 +1,136 @@
+.nav { color: ?; background-color: '#006c4d' !important; }
+
+/* Change the color of the buttons and all of their states to CSU Theme*/
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link {
+    background-color: gray;
+}
+
+/* nav bar tab margins */
+.navbar li {
+  margin-left : .25em;
+  margin-right : .25em;
+  margin-top: .25em;
+  margin-bottom: .25em;
+}
+
+/* body styling */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* css for header pic */
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/building.jpg");
+  height: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* container sytling */
+.container {
+    background: #fff;
+    ;
+    width: 80%;
+    display: table;
+    margin: 0 auto;
+    margin-top: 40px;
+    border: 1px solid #cfcbcc;
+  }
+
+/* task styling start */  
+input.task {
+  border: none;
+  display: block;
+  width: 98.4%;
+  line-height: 2.5;
+  padding: 4px 0 4px 5px;
+  border-bottom: 1px solid #cfcbcc;
+  outline:0;
+  font-size:25px;
+}
+
+h1,h2 {
+  text-align: center;
+  margin-bottom: 0px;
+  line-height: 1;
+}
+  
+h2 { color: gray; }
+
+ul.task {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+}
+
+.ta{
+  color: #899098;
+  font-weight: 400;
+  border-bottom: 1px solid #cfcbcc;
+  line-height: 1.5;
+  padding-bottom: : 5%;
+  font-size: 30px;
+}
+
+.ta:before {
+  content: "\25A1";
+  padding: 10px;
+  font-size: 30px;
+}
+
+.ta:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.ta:last-child { border-bottom: none; }
+
+.checked { color:green; }
+
+.checked:before { 
+  content: "\2713";
+  padding: 10px 10px;
+  font-size: 30px;
+}
+
+li.ta.checked:hover { text-decoration: none; }
+
+li.ta.checked:after {
+  content:" (remove)";
+  color: red;
+  text-align: right;
+}
+
+
+  

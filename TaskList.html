@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Page Title -->
+  <title>Tasks</title>
+  <meta charset='utf-8' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Links to ajax, jquery, bootstrap and css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./TaskList.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!-- ################################ -->
+<!-- _____ Navigation Bar Start _____ -->
+<nav class="navbar navbar-expand-md  navbar-dark " style="background-color:#006c4d; font-size: larger; ">
+
+ <!-- Home Button -->
+<a class="navbar-brand" href="../index.html"><span class="fa fa-fw fa-home"></span>VikesLife</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- divs for tabs -->
+<div class="collapse navbar-collapse" id="collapsibleNavbar">
+  <ul class="navbar-nav nav-justified w-100 ">
+
+    <!-- Home tab -->
+    <li class="nav-item " >
+      <a class="nav-link " href="../index.html" >Home</a>
+    </li>
+
+    <!-- Tasks tab -->
+    <li class="nav-item active">
+      <a class="nav-link" href="TaskList.html">Tasks</a>
+    </li>
+
+    <!-- Contacts tab -->
+    <li class="nav-item">
+      <a class="nav-link" href="Contacts.html">Contacts</a>
+    </li>
+
+    <!-- Classes tab -->
+    <li class="nav-item ">
+      <a class="nav-link" href="Schedule.html">Classes</a>
+    </li>
+
+    <!-- Resources tab -->
+    <li class="nav-item ">
+      <a class="nav-link" href="ResourceLinks.html">Resources</a>
+    </li>
+
+    <!-- MyCalendar tab -->
+    <li class="nav-item ">
+      <a class="nav-link" href="../CalendarResources/Calendars/PersonalCalendar.html">MyCalendar</a>
+    </li>
+
+    <!-- CSU calendar tab -->
+    <li class="nav-item">
+      <a class="nav-link" href="../CalendarResources/Calendars/SchoolCalendar.html" >CSU Calendar</a>
+    </li>
+
+    <!-- Login button -->
+    <li class="nav-item">
+      <a href="LoginForm.html" class="btn btn-info btn-lg">
+      <span class="fa fa-fw fa-user"></span> Login
+      </a>
+    </li>
+  </ul>
+</div>
+</nav>
+
+<!-- CSU Header Picture Below Nav Bar -->
+<div class="hero-image">
+  <div class="hero-text">
+  </div>
+</div>
+
+<div style="background:#006c4d; width:100%; height:12%;"><br><br>
+  <!-- To-do List -->
+  <h1 style="color:white;"> To-Do List</h1>
+</div><br>
+
+<!-- container for task list -->
+<div class="container">
+  <form  action="#">
+    <input class="task" type="text" name="item" id="item" placeholder="Add a Task! " />
+  </form>  
+  <ul id="list" class="task"></ul>
+</div>
+
+<div style=" height:120%; width:100%; float:below;"></div><br>
+  
+<div style="background:#006c4d; height:20%; width:100%; ">
+
+<!-- Functions for adding and removing tasks -->
+<script>
+(function(){
+
+  var list = document.querySelector('#list'),
+      form = document.querySelector('form'),
+      item = document.querySelector('#item');
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    list.innerHTML += '<li class="ta">' + item.value + '</li>';
+    store();
+    item.value = "";
+  },false)
+
+  list.addEventListener('click',function(e){
+    var t = e.target;
+    if(t.classList.contains('checked')){
+      t.parentNode.removeChild(t);
+    } else {
+      t.classList.add('checked');
+    }
+    store();
+  },false)
+
+  function store() {
+    window.localStorage.myitems = list.innerHTML;
+  }
+
+  function getValues() {
+    var storedValues = window.localStorage.myitems;
+    if(!storedValues) {
+      list.innerHTML = '<li></li>';
+    }
+    else {
+      list.innerHTML = storedValues;
+    }
+  }
+  getValues();
+})();
+</script>
+
+</body>
+</html>
